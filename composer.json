@@ -1,0 +1,16 @@
+{
+  "name":"djnotes/phpbot",
+  "require": {
+    "danog/madelineproto": "^5.0"
+  },
+  "repositories": [
+    {
+        "type": "git",
+        "url": "https://github.com/danog/phpseclib"
+    }
+],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {"PhpBot\\": "src/"}
+  }
+}
