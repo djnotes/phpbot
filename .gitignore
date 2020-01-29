@@ -1,2 +1,9 @@
 vendor/
 session.*
+/nbproject/private/
+.idea/
+nbproject/
+.project
+.settings/
+.buildpath
+composer.lock

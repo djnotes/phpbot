@@ -20,7 +20,6 @@ class BotEventHandler extends EventHandler {
 
   const REGISTER_SEND_USERNAME = "register_send_username";
   const REGISTER_SEND_PASSWORD = "register_send_password";
-  const REGISTER_SAVE_INFO = "register_save_info"
 
   static $admin_markup = [
     '_' => 'replyInlineMarkup', 'rows' => [
@@ -63,30 +62,28 @@ class BotEventHandler extends EventHandler {
           break;
         case '/menu':
           yield $this->messages->sendMessage(['peer' => $peerId, 'message' => 'Select an option to continue', 'reply_markup' => self::$admin_markup]);
+          return;
           break;
 
       }
 
       //Message was not handled in the menu. So process based on session
 
+      if(!isset(self::$sessions[$peerId]['state'])) {
+        self::$sessions[$peerId]['state'] = '';
+      }
       switch(self::$sessions[$peerId]['state']) {
-        case STATE_SEND_USERNAME:
+        case $this::REGISTER_SEND_USERNAME:
           self::$sessions[$peerId]['username'] = filter_var($message, FILTER_SANITIZE_STRING);
-          self::$sessions[$peerId]['state'] = REGISTER_SEND_PASSWORD;
+          self::$sessions[$peerId]['state'] = $this::REGISTER_SEND_PASSWORD;
+          yield $this->messages->sendMessage(['peer' => $peerId, 'message' => 'Enter password']);
           break;
-        case REGISTER_SEND_PASSWORD:
+        case $this::REGISTER_SEND_PASSWORD:
           self::$sessions[$peerId]['password'] = filter_var($message, FILTER_SANITIZE_STRING);
-          self::$sessions[$peerId]['state'] = REGISTER_SAVE_INFO;
-          break;
-
-        case REGISTER_SAVE_INFO:
           if($this->registerUser($peerId)) {
             //clear session
             self::$sessions[$peerId] = [];
-            yield $this->messages->sendMessage(['peer' => $peerId, 'message' => "Registration successful. Now you may log in."])
-          }
-          else {
-            yield $this->messages->sendMessage(['peer' => $peerId, 'message' => "Registration failed. Sorry!"])
+            yield $this->messages->sendMessage(['peer' => $peerId, 'message' => "Registration successful. Now you may log in."]);
           }
           break;
 
@@ -102,18 +99,31 @@ class BotEventHandler extends EventHandler {
   }
 
   public function onUpdateBotCallbackQuery($update){
+    yield $this->logger($update);
+
     $peerId = $update['user_id'];
     switch($update['data']){
       case 'callback_register':
-        self::$sessions[$peerId]['session']['state'] = self::REGISTER_SEND_USERNAME;
+
+        self::$sessions[$peerId]['state'] = $this::REGISTER_SEND_USERNAME;
         yield $this->messages->sendMessage(['peer' => $peerId, 'message' => "Please enter a username to register"]);
         break;
     }
-    yield $this->logger($update);
   }
 
-  protected function registerUser (long $peerId) {
+  protected function registerUser (int $peerId) {
+      $config = Amp\Mysql\ConnectionConfig::fromString("host=127.0.0.1 user=testuser password=testpass db=phpbot");
+
+      $pool = Amp\Mysql\pool($config);
+
+      $statement = yield $pool->prepare("INSERT INTO `users` (`username`, `password`) VALUES (:username, :password)");
+
+      $result = yield $statement->execute(['username' => self::$sessions[$peerId]['username'], 'password' => self::$sessions[$peerId]['password']]);
+
     //TODO: save user info in db
+    yield $this->echo("Result of insertion: ");
+    yield $this->logger($result);
+    if($result){return true;}
     return false;
   }
 

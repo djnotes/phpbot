@@ -1,7 +1,8 @@
 {
   "name":"djnotes/phpbot",
   "require": {
-    "danog/madelineproto": "^5.0"
+    "danog/madelineproto": "^5.0",
+    "amphp/mysql": "dev-master"
   },
   "repositories": [
     {
