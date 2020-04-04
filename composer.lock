@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e27df19519c3bb3c25cd1de369770d7f",
+    "content-hash": "76bc0430c4fb02ecfa418fde1bb26b0d",
     "packages": [
         {
             "name": "amphp/amp",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/amp.git",
-                "reference": "13930a582947831bb66ff1aeac28672fd91c38ea"
+                "reference": "2ac3b550c4997f2ec304faa63c8b2885079a2dc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/amp/zipball/13930a582947831bb66ff1aeac28672fd91c38ea",
-                "reference": "13930a582947831bb66ff1aeac28672fd91c38ea",
+                "url": "https://api.github.com/repos/amphp/amp/zipball/2ac3b550c4997f2ec304faa63c8b2885079a2dc4",
+                "reference": "2ac3b550c4997f2ec304faa63c8b2885079a2dc4",
                 "shasum": ""
             },
             "require": {
@@ -81,20 +81,20 @@
                 "non-blocking",
                 "promise"
             ],
-            "time": "2019-11-11T19:32:05+00:00"
+            "time": "2020-02-10T18:10:57+00:00"
         },
         {
             "name": "amphp/byte-stream",
-            "version": "v1.7.1",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/byte-stream.git",
-                "reference": "9d8205686a004948475dc43f8a88d2fa5e75a113"
+                "reference": "1e52f1752b2e20e2a7e464476ef887a2388e3832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/9d8205686a004948475dc43f8a88d2fa5e75a113",
-                "reference": "9d8205686a004948475dc43f8a88d2fa5e75a113",
+                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/1e52f1752b2e20e2a7e464476ef887a2388e3832",
+                "reference": "1e52f1752b2e20e2a7e464476ef887a2388e3832",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "non-blocking",
                 "stream"
             ],
-            "time": "2019-10-27T14:33:41+00:00"
+            "time": "2020-01-29T18:22:23+00:00"
         },
         {
             "name": "amphp/cache",
@@ -826,12 +826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/socket.git",
-                "reference": "d1b094ed5fedb764b9328a97ee98bd802cbe42e8"
+                "reference": "7083250147142a106dc09a1b8a374f31b2c4d7dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/socket/zipball/d1b094ed5fedb764b9328a97ee98bd802cbe42e8",
-                "reference": "d1b094ed5fedb764b9328a97ee98bd802cbe42e8",
+                "url": "https://api.github.com/repos/amphp/socket/zipball/7083250147142a106dc09a1b8a374f31b2c4d7dd",
+                "reference": "7083250147142a106dc09a1b8a374f31b2c4d7dd",
                 "shasum": ""
             },
             "require": {
@@ -892,7 +892,7 @@
                 "tcp",
                 "tls"
             ],
-            "time": "2020-01-14T17:42:43+00:00"
+            "time": "2020-01-28T05:37:12+00:00"
         },
         {
             "name": "amphp/sql",
@@ -1264,16 +1264,16 @@
         },
         {
             "name": "danog/madelineproto",
-            "version": "5.0.44",
+            "version": "5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danog/MadelineProto.git",
-                "reference": "db4084886667289c13963a5d4f3ea267ea698ba0"
+                "reference": "0aa75af3e4684497f7848b89c8b2d4dca337d296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/db4084886667289c13963a5d4f3ea267ea698ba0",
-                "reference": "db4084886667289c13963a5d4f3ea267ea698ba0",
+                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/0aa75af3e4684497f7848b89c8b2d4dca337d296",
+                "reference": "0aa75af3e4684497f7848b89c8b2d4dca337d296",
                 "shasum": ""
             },
             "require": {
@@ -1288,6 +1288,7 @@
                 "danog/dns-over-https": "^0.2",
                 "danog/magicalserializer": "^1.0",
                 "danog/primemodule": "^1",
+                "danog/tg-file-decoder": "^0.1",
                 "danog/tgseclib": "^3",
                 "erusev/parsedown": "^1.7",
                 "ext-dom": "*",
@@ -1304,7 +1305,11 @@
                 "krakjoe/pthreads-polyfill": "*"
             },
             "require-dev": {
+                "amphp/http": "^1.6",
+                "amphp/http-server": "dev-master",
                 "amphp/php-cs-fixer-config": "dev-master",
+                "amphp/websocket": "dev-master as 1",
+                "amphp/websocket-client": "dev-master as 1",
                 "danog/7to5": "^1",
                 "danog/7to70": "^1",
                 "ennexa/amp-update-cache": "dev-master",
@@ -1355,7 +1360,7 @@
                 "telegram",
                 "video"
             ],
-            "time": "2020-01-19T14:44:12+00:00"
+            "time": "2020-02-15T19:02:32+00:00"
         },
         {
             "name": "danog/magicalserializer",
@@ -1433,6 +1438,59 @@
             ],
             "description": "Prime module capable of doing prime factorization of huge numbers very quickly.\"",
             "time": "2018-03-21T10:47:51+00:00"
+        },
+        {
+            "name": "danog/tg-file-decoder",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danog/tg-file-decoder.git",
+                "reference": "afcdb9a4a7239e36e8ab3b9a02db72eaa95db66e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danog/tg-file-decoder/zipball/afcdb9a4a7239e36e8ab3b9a02db72eaa95db66e",
+                "reference": "afcdb9a4a7239e36e8ab3b9a02db72eaa95db66e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "amphp/php-cs-fixer-config": "dev-master",
+                "phpunit/phpunit": "^8|^6"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "danog\\Decoder\\": "src/"
+                },
+                "files": [
+                    "src/type.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Daniil Gentili",
+                    "email": "daniil@daniil.it"
+                }
+            ],
+            "description": "Decode Telegram bot API file IDs",
+            "keywords": [
+                "audio",
+                "bot api",
+                "file ID",
+                "files",
+                "mtproto",
+                "stickers",
+                "telegram",
+                "video"
+            ],
+            "time": "2020-02-06T16:11:19+00:00"
         },
         {
             "name": "danog/tgseclib",
@@ -1620,21 +1678,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kelunik/certificate.git",
-                "reference": "fef86edd4233bf65264a2825b5273cd45479b608"
+                "reference": "47dcc659fe73ae040ae17d068a4fc8777813f0fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kelunik/certificate/zipball/fef86edd4233bf65264a2825b5273cd45479b608",
-                "reference": "fef86edd4233bf65264a2825b5273cd45479b608",
+                "url": "https://api.github.com/repos/kelunik/certificate/zipball/47dcc659fe73ae040ae17d068a4fc8777813f0fb",
+                "reference": "47dcc659fe73ae040ae17d068a4fc8777813f0fb",
                 "shasum": ""
             },
             "require": {
                 "ext-openssl": "*",
-                "php": ">=5.4"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "^1.9",
-                "phpunit/phpunit": "^4.8"
+                "amphp/php-cs-fixer-config": "dev-master",
+                "phpunit/phpunit": "^6 | 7"
             },
             "type": "library",
             "extra": {
@@ -1666,27 +1724,25 @@
                 "pem",
                 "x509"
             ],
-            "time": "2020-01-14T17:19:47+00:00"
+            "time": "2020-01-29T20:07:08+00:00"
         },
         {
             "name": "league/uri",
-            "version": "6.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri.git",
-                "reference": "cf488ec34faa3b5c600659c8fc18d67c4752a5cb"
+                "reference": "a12b206e10a8454350d11fd3e0d878e9a2f32085"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri/zipball/cf488ec34faa3b5c600659c8fc18d67c4752a5cb",
-                "reference": "cf488ec34faa3b5c600659c8fc18d67c4752a5cb",
+                "url": "https://api.github.com/repos/thephpleague/uri/zipball/a12b206e10a8454350d11fd3e0d878e9a2f32085",
+                "reference": "a12b206e10a8454350d11fd3e0d878e9a2f32085",
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
                 "ext-json": "*",
-                "ext-mbstring": "*",
-                "league/uri-interfaces": "^2.0",
+                "league/uri-interfaces": "^2.1",
                 "php": "^7.2",
                 "psr/http-message": "^1.0"
             },
@@ -1694,20 +1750,21 @@
                 "league/uri-schemes": "^1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-strict-rules": "^0.11",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
                 "phpunit/phpunit": "^7.0 | ^8.0"
             },
             "suggest": {
+                "ext-fileinfo": "Needed to create Data URI from a filepath",
                 "ext-intl": "Needed to improve host validation",
                 "league/uri-components": "Needed to easily manipulate URI objects"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -1743,11 +1800,13 @@
                 "querystring",
                 "rfc3986",
                 "rfc3987",
+                "rfc6570",
                 "uri",
+                "uri-template",
                 "url",
                 "ws"
             ],
-            "time": "2019-11-23T20:59:00+00:00"
+            "time": "2020-02-18T11:12:55+00:00"
         },
         {
             "name": "league/uri-interfaces",
@@ -1755,12 +1814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri-interfaces.git",
-                "reference": "b82de7110a2d9cd4fa79b05ede41ed3438a9d9c5"
+                "reference": "0068a469958895ceaf3afcb489c0258adfa1e406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/b82de7110a2d9cd4fa79b05ede41ed3438a9d9c5",
-                "reference": "b82de7110a2d9cd4fa79b05ede41ed3438a9d9c5",
+                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/0068a469958895ceaf3afcb489c0258adfa1e406",
+                "reference": "0068a469958895ceaf3afcb489c0258adfa1e406",
                 "shasum": ""
             },
             "require": {
@@ -1769,9 +1828,9 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-strict-rules": "^0.11",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
                 "phpunit/phpunit": "^7.0|^8.0"
             },
             "type": "library",
@@ -1804,7 +1863,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2020-01-14T16:35:55+00:00"
+            "time": "2020-02-08T12:10:37+00:00"
         },
         {
             "name": "league/uri-parser",

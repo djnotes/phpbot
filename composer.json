@@ -4,12 +4,6 @@
     "danog/madelineproto": "^5.0",
     "amphp/mysql": "dev-master"
   },
-  "repositories": [
-    {
-        "type": "git",
-        "url": "https://github.com/danog/phpseclib"
-    }
-],
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {"PhpBot\\": "src/"}
